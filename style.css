@@ -12,7 +12,7 @@ main {
     display: grid;
 }
 
-.game {
+#game {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -21,6 +21,6 @@ main {
     gap: 10px;
 }
 
-.game > div {
+#game > button {
     background-color: beige;
 }
