@@ -1,5 +1,4 @@
 const createPlayer = (name, symbol) => {
-  //creates players
   return { name, symbol };
 };
 
@@ -12,9 +11,7 @@ const gameFlow = {
   board: Array(9).fill(""),
   gameActive: true, //allows the game to be stopped when there is a winner or a tie
 
-
   nextTurn: function () {
-    //determines which players turn it is
     return this.players[this.currentTurn % 2];
   },
 
@@ -69,8 +66,7 @@ function checkWinner() {
     ) {
       const winningSymbol = gameFlow.board[a]; //checks which player won
       const winner = gameFlow.players.find(
-        (player) => player.symbol === winningSymbol
-      ); //see which player won
+        (player) => player.symbol === winningSymbol); //see which player won
       return winner ? winner.name : null;
     }
   }
@@ -129,8 +125,7 @@ function submitButton() {
     const play1 = document.getElementById("name1").value;
     const play2 = document.getElementById("name2").value;
 
-    if (play1 === "" || play2 === "") {
-      //makes sure playernames are input or no gameboard will load
+    if (play1 === "" || play2 === "") {//makes sure playernames are input or no gameboard will load
       alert("Give Player Names");
       return;
     }
@@ -157,7 +152,7 @@ function computerPlayer() {
 
   for (const condition of winningCondition) {
     const [a, b, c] = condition;
-    
+
     const player1Count =
       (gameFlow.board[a] === "X" ? 1 : 0) +
       (gameFlow.board[b] === "X" ? 1 : 0) +
@@ -178,13 +173,11 @@ const result = computerPlayer();
 console.log(result.playSq0);
 console.log(result.playSq1);
 console.log(result.playSq2);
-  // const filter main array to see which index are filled
-  // remove filtered indexes from option
-  //filter a,b or c are player1
-  // check if player1 has a&b,  b&c or a&c
-  //move to fill c,a or b
-  //otherewise fill index 4
-  // otherwise a position from any of the left over array items
 
-
-  
+// const filter main array to see which index are filled
+// remove filtered indexes from option
+//filter a,b or c are player1
+// check if player1 has a&b,  b&c or a&c
+//move to fill c,a or b
+//otherewise fill index 4
+// otherwise a position from any of the left over array items
