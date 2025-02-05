@@ -6,7 +6,7 @@ let player1;
 let player2;
 
 const gameFlow = {
-  players: [player1, player2],
+  players: [],
   currentTurn: 0,
   board: Array(9).fill(""),
 
