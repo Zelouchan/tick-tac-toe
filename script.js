@@ -88,13 +88,47 @@ function move(event) {
       const winner = checkWinner();
       if (winner) {
         gameFlow.gameActive = false;
-        alert(winner + " Wins!");
+        const area = document.getElementById("game");
+        area.innerHTML = "";
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add("message"); // Add the message clas
+        messageDiv.textContent = winner + " Wins!";
+        area.appendChild(messageDiv);
+        const resetButton = document.createElement("button"); // Create the reset button
+        resetButton.textContent = "Play Again"; // Set button text
+        resetButton.addEventListener("click", () => {
+          // Add reset logic
+          gameFlow.board = Array(9).fill("");
+          gameFlow.currentTurn = 0;
+          gameFlow.gameActive = true;
+          gameFlow.displayBoard();
+          area.innerHTML = ""; 
+          gameFlow.displayBoard();// Clear message and board for the next game
+        });
+        messageDiv.appendChild(resetButton);
         return;
       }
 
       if (gameFlow.currentTurn === 9) {
         gameFlow.gameActive = false;
-        alert("Game Over! It's a Tie!");
+        const area = document.getElementById("game");
+        area.innerHTML = "";
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add("message"); // Add the message clas
+        messageDiv.textContent = "Game over! It's a tie.";
+        area.appendChild(messageDiv);
+        const resetButton = document.createElement("button"); // Create the reset button
+        resetButton.textContent = "Play Again"; // Set button text
+        resetButton.addEventListener("click", () => {
+          // Add reset logic
+          gameFlow.board = Array(9).fill("");
+          gameFlow.currentTurn = 0;
+          gameFlow.gameActive = true;
+          gameFlow.displayBoard();
+          area.innerHTML = "";
+          gameFlow.displayBoard(); // Clear message and board for the next game
+        });
+        messageDiv.appendChild(resetButton);
         return;
       }
     }

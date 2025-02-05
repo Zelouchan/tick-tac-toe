@@ -98,6 +98,38 @@
     padding: 4px;
     margin: 10%;
   }
+
+  #game > .message {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    border-left: var(--game-border-width) solid var(--colour5);
+    border-top: var(--game-border-width) solid var(--colour5);
+    border-right: var(--game-border-width) solid var(--colour4);
+    border-bottom: var(--game-border-width) solid var(--colour4);
+}
+
+#game > .message button {
+    width: 100%;
+    height: 2rem;
+    margin-top: 4%;
+    border: none;
+    padding: 2px;
+    border-left: var(--border-width) solid var(--colour5);
+    border-top: var(--border-width) solid var(--colour5);
+    border-right: var(--border-width) solid var(--colour4);
+    border-bottom: var(--border-width) solid var(--colour4);
+    background-color: var(--colour3);
+    font-weight: bold;
+    font-size: var(--font-size-base);
+    grid-column: 1 / -1;
+    grid-row: -2 / -1;
+    
+}
   
   #game > button {
     background-color: var(--colour3);
